@@ -88,24 +88,9 @@ const TextAreaWithBackground = () => {
   console.log(fullOTP, "rounded div k upar");
   return (
     <div className="form-container">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div
-          className="title"
-        >
-          #post #box #project
-        </div>
-        <div
-          style={{
-            marginTop: "3px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+      <div className="form-head">
+        <div className="form-head1">#post #box #project</div>
+        <div className="form-head2">
           <span>DATE AND TIME:</span>
           <span style={{ marginLeft: "5px" }}>
             {new Date().toLocaleString()}
@@ -118,257 +103,184 @@ const TextAreaWithBackground = () => {
           borderTop: "1px solid black;",
         }}
       />
-      <br />
-      <div>
+
+      <div className="first-text-area">
         <div
           style={{
-            fontSize: "18px",
+            marginBottom: "0.5px",
           }}
         >
-          What Really Happend?
+          What Really Happened ?
         </div>
-
-        <br />
-        <textarea
-          style={{
-            height: "120px",
-            width: "96%",
-            backgroundColor: "#f7f8f3",
-          }}
-          value={id1}
-          onChange={(e) => setId1(e.target.value)}
-        >
-          {id1}
-        </textarea>
-      </div>
-      <div>
-        <div
-        className="down-container"
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "380px",
-            }}
+        <div className="TA1">
+          <textarea
+            rows="10"
+            value={id1}
+            onChange={(e) => setId1(e.target.value)}
           >
-            <div>
-              <div
-                style={{
-                  fontSize: "18px",
-                }}
-              >
-                How do you feel now?
-              </div>
+            {id1}
+          </textarea>
+        </div>
+      </div>
 
-              <br />
+      <br />
+
+      <div className="middleDiv">
+        <div className="middle-left">
+          <div className="middle-left-up">
+            <div
+              style={{
+                marginBottom: "0.5px",
+              }}
+            >
+              HOW DO YOU FEEL NOW ?
+            </div>
+            <div className="TA2">
               <textarea
-                style={{
-                  height: "120px",
-                  // width: "96%",
-                  backgroundColor: "#f7f8f3",
-                }}
+                rows="10"
                 value={id2}
                 onChange={(e) => setId2(e.target.value)}
-              ></textarea>
-            </div>
-            <div>
-              <div
-                style={{
-                  fontSize: "18px",
-                }}
               >
-                How may we help you?
-              </div>
-
-              <br />
+                {id2}
+              </textarea>
+            </div>
+          </div>
+          <br />
+          <div className="middle-left-up">
+            <div
+              style={{
+                marginBottom: "0.5px",
+              }}
+            >
+              HOW, MAY WE HELP YOU ?
+            </div>
+            <div className="TA2">
               <textarea
-                style={{
-                  height: "120px",
-                  // width: "96%",
-                  backgroundColor: "#f7f8f3",
-                }}
+                rows="10"
                 value={id3}
                 onChange={(e) => setId3(e.target.value)}
-              ></textarea>
+              >
+                {id3}
+              </textarea>
             </div>
+          </div>
+        </div>
+        <div className="middle-right">
+          <div className="checkbox">
+            <table>
+              <tr>
+                <th></th>
+                <th>yes</th>
+                <th>no</th>
+              </tr>
+              <tr>
+                <td>ARE YOU HAPPY?</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="inputReady1"
+                    value={id10}
+                  />
+                </td>
+                <td>
+                  <input type="radio" id="no" name="inputReady1" value={id10} />
+                </td>
+              </tr>
+              <tr>
+                <td>ARE YOU UPSET?</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="inputReady2"
+                    value={id11}
+                  />
+                </td>
+                <td>
+                  <input type="radio" id="no" name="inputReady2" value={id11} />
+                </td>
+              </tr>
+              <tr>
+                <td>ARE YOU READY?</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="inputReady3"
+                    value={id12}
+                  />
+                </td>
+                <td>
+                  <input type="radio" id="no" name="inputReady3" value={id12} />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br />
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontWeight: "bold",
+            }}
+          >
+            Your Email-ID AND Signature
           </div>
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              marginRight: "40px",
+              justifyContent: "center",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-              }}
-            >
-              <div
-                style={{
-                  marginLeft: "138px",
-                }}
-              >
-                {" "}
-                <span>yes</span>
-                <span
-                  style={{
-                    marginLeft: "30px",
-                  }}
-                >
-                  no
-                </span>
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div>Are u happy?</div>
-              <div
-                style={{
-                  marginLeft: "56px",
-                }}
-              >
-                <input
-                  type="radio"
-                  id="yes"
-                  name="inputReady1"
-                  value={id10}
-                  onChange={() => setId10("yes")}
-                />
-                <input
-                  type="radio"
-                  id="no"
-                  name="inputReady1"
-                  value={id10}
-                  onChange={() => setId10("no")}
-                  style={{ marginLeft: "30px" }}
-                />
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div>Are u upset?</div>
-              <div
-                style={{
-                  marginLeft: "60px",
-                }}
-              >
-                <input
-                  type="radio"
-                  id="yes"
-                  name="inputReady2"
-                  value={id11}
-                  onChange={() => setId11("yes")}
-                />
-                <input
-                  type="radio"
-                  id="no"
-                  name="inputReady2"
-                  value={id11}
-                  onChange={() => setId11("no")}
-                  style={{ marginLeft: "30px" }}
-                />
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div>Are u ready?</div>
-              <div
-                style={{
-                  marginLeft: "60px",
-                }}
-              >
-                <input
-                  type="radio"
-                  id="yes"
-                  name="inputReady3"
-                  value={id12}
-                  onChange={() => setId12("yes")}
-                />
-                <input
-                  type="radio"
-                  id="no"
-                  name="inputReady3"
-                  value={id12}
-                  onChange={() => setId12("no")}
-                  style={{ marginLeft: "30px" }}
-                />
-              </div>
-            </div>
-            <div>Your email address and signature</div>
-            <div>
-              <img
-                src="whilelogo.png"
-                alt=""
-                style={{
-                  height: "220px",
-                  width: "240px",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              {fullOTP
-                .toString()
-                .split("")
-                .map((digit, index) => (
-                  <RoundedDiv key={index}>{digit}</RoundedDiv>
-                ))}
-            </div>
+            <img src="yolowolo_white logo.jpeg" alt="" className="logo" />
+          </div>
+          <div className="roundedDiv">
+            {fullOTP
+              .toString()
+              .split("")
+              .map((digit, index) => (
+                <RoundedDiv key={index}>{digit}</RoundedDiv>
+              ))}
           </div>
         </div>
       </div>
-      <div>
+      <br />
+      <div className="down-div">
         <div
           style={{
-            fontSize: "18px",
+            marginBottom: "0.5px",
           }}
         >
-          How can we make it better?
+          HOW CAN WE MAKE IT BETTER ?
         </div>
-
-        <br />
-        <textarea
-        className="bottom-container"
-          value={id4}
-          onChange={(e) => setId4(e.target.value)}
-        ></textarea>
+        <div className="TA1">
+          <textarea
+            rows="10"
+            value={id4}
+            onChange={(e) => setId4(e.target.value)}
+          ></textarea>
+        </div>
       </div>
 
       <br />
-<div>
-<Button
-  variant="contained"
-  style={{
-    position: "absolute",
-    left: "50%",
-    // top: "50%",
-    transform: "translate(-50%, -50%)",
-    marginTop:"10px"
-  }}
-  onClick={handleModalOpen}
->
-  Submit
-</Button>
-</div>
+      <br />
+      <br />
 
+      <div>
+        <Button
+          className="submit-button"
+          variant="contained"
+          onClick={handleModalOpen}
+        >
+          Submit
+        </Button>
+      </div>
+
+      <br />
+      <br />
+      <br />
       {/* Modal for the pop-up card */}
       <Modal
         open={isModalOpen}
@@ -376,13 +288,9 @@ const TextAreaWithBackground = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Card
-        className="card"
-        >
+        <Card className="card">
           <CardContent>
-            <div
-            className="card-container"
-            >
+            <div className="card-container">
               <TextField
                 label="First Name"
                 name="name"
@@ -448,6 +356,10 @@ const TextAreaWithBackground = () => {
         autoHideDuration={2000}
         onClose={handleCloseSnackbar}
         message="You are Super Savy and we are happy to be connected with you. 😊"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
       />
     </div>
   );

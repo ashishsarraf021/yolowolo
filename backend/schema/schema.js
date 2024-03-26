@@ -17,7 +17,7 @@ const formSchema = new mongoose.Schema({
 
 // Define schema with desired keys and values
 const userSchema = new mongoose.Schema({
-  currency: { type: Number }, // Assuming currency is a required number field
+  currency: { type: String }, // Assuming currency is a required number field
   // Define other fields with their respective types
   formDetails: formSchema
 }, { strict: false });
