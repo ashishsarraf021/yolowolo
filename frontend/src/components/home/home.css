@@ -63,12 +63,15 @@
   
   /* Media query for small screens */
   @media (max-width: 768px) {
+
+
     .img {
       height: 30vh; /* Set height to 30% of viewport height */
       margin-left: 13px;
     }
   
-    .content-containe{
+    .content-container{
+      margin-top: 0px;
         max-width: 90%;
         flex-basis: 100%;
     }
@@ -78,8 +81,16 @@
         
     }
     .otp {
-      max-width: 90%;
-      flex-basis: 100%; /* Occupy full width */
+      /* max-width: 50%; */
+      flex-basis: 100%; /* Occupy full width 
+      */
+      margin-left: 2%;
     }
+
+      .button {
+        margin-top: 10px; 
+        margin-bottom: 225px; 
+      }
+
   }
   

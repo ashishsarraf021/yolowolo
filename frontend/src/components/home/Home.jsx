@@ -18,7 +18,7 @@ const Home = () => {
     console.log("this button");
     try {
       console.log(fullOTP)
-      let resp = await axios.post('http://localhost:8000/api/v1/create',{
+      let resp = await axios.post('https://yolowolo.onrender.com/api/v1/create',{
       currency: Number(fullOTP)
     })
     localStorage.setItem('fullOTP', JSON.stringify(fullOTP));
@@ -68,7 +68,9 @@ const Home = () => {
         //   alignItems: "center",
         // }}
       >
-        <h4>Sustainable Governence, Environment and Technology</h4>
+        <h4
+        style={{textAlign:"center"}}
+        >Sustainable Governence, Environment and Technology</h4>
 
         <div
         className="input-container"
@@ -79,7 +81,8 @@ const Home = () => {
           // }}
         >
           <div>
-            <h5>
+            <h5
+            style={{textAlign:"center"}}>
             Please, Enter the 9-Digit Serial Number written on the currency note of India
             </h5>
           </div>
@@ -90,12 +93,14 @@ const Home = () => {
           <br />
           <br />
         <br />
-
+<div 
+className="button">
           <Button variant="contained" color="primary" 
           onClick={handlesubmit}
           >
             Click me
           </Button>
+          </div>
         </div>
       </div>
     </div>

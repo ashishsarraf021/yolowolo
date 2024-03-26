@@ -233,5 +233,13 @@ const InputElement = styled('input')(
   &:focus-visible {
     outline: 0;
   }
+
+  @media (max-width: 600px) {
+    width: 18px; // Decrease width for 
+    smaller devices
+    height: 25px;
+    padding: 6px 0px; // Adjust padding for smaller devices
+    font-size: 0.75rem; // Decrease font size for smaller devices
+  }
 `,
 );

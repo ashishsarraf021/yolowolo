@@ -9,10 +9,11 @@ import {
 } from "@mui/material";
 import RoundedDiv from "../../utilities/roundeddiv";
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import "./eform.css";
 
 const TextAreaWithBackground = () => {
-    let naivgate=useNavigate()
+  let naivgate = useNavigate();
   const [id1, setId1] = useState("");
   const [id2, setId2] = useState("");
   const [id3, setId3] = useState("");
@@ -45,7 +46,7 @@ const TextAreaWithBackground = () => {
     // Handle submission logic here
     console.log(formData);
     try {
-      let resp = await axios.post("http://localhost:8000/api/v1/save", {
+      let resp = await axios.post("https://yolowolo.onrender.com/api/v1/save", {
         currency: fullOTP,
         "what really happend": id1,
         "how do you feel now": id2,
@@ -86,15 +87,7 @@ const TextAreaWithBackground = () => {
   }, []);
   console.log(fullOTP, "rounded div k upar");
   return (
-    <div
-      style={{
-        backgroundColor: "#f7f8f3",
-        width: "50%",
-        minHeight: "100vh",
-        padding: "30px",
-        marginLeft: "325px",
-      }}
-    >
+    <div className="form-container">
       <div
         style={{
           display: "flex",
@@ -102,12 +95,9 @@ const TextAreaWithBackground = () => {
         }}
       >
         <div
-          style={{
-            fontSize: "18px",
-            // marginTop: "15px"
-          }}
+          className="title"
         >
-          #post #box #project #
+          #post #box #project
         </div>
         <div
           style={{
@@ -153,11 +143,7 @@ const TextAreaWithBackground = () => {
       </div>
       <div>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
+        className="down-container"
         >
           <div
             style={{
@@ -172,14 +158,14 @@ const TextAreaWithBackground = () => {
                   fontSize: "18px",
                 }}
               >
-                What Really Happend?
+                How do you feel now?
               </div>
 
               <br />
               <textarea
                 style={{
                   height: "120px",
-                  width: "96%",
+                  // width: "96%",
                   backgroundColor: "#f7f8f3",
                 }}
                 value={id2}
@@ -192,14 +178,14 @@ const TextAreaWithBackground = () => {
                   fontSize: "18px",
                 }}
               >
-                What Really Happend?
+                How may we help you?
               </div>
 
               <br />
               <textarea
                 style={{
                   height: "120px",
-                  width: "96%",
+                  // width: "96%",
                   backgroundColor: "#f7f8f3",
                 }}
                 value={id3}
@@ -241,10 +227,10 @@ const TextAreaWithBackground = () => {
                 flexDirection: "row",
               }}
             >
-              <div>Are u ready?</div>
+              <div>Are u happy?</div>
               <div
                 style={{
-                  marginLeft: "60px",
+                  marginLeft: "56px",
                 }}
               >
                 <input
@@ -270,7 +256,7 @@ const TextAreaWithBackground = () => {
                 flexDirection: "row",
               }}
             >
-              <div>Are u ready?</div>
+              <div>Are u upset?</div>
               <div
                 style={{
                   marginLeft: "60px",
@@ -355,30 +341,33 @@ const TextAreaWithBackground = () => {
             fontSize: "18px",
           }}
         >
-          What Really Happend?
+          How can we make it better?
         </div>
 
         <br />
         <textarea
-          style={{
-            height: "120px",
-            width: "96%",
-            backgroundColor: "#f7f8f3",
-          }}
+        className="bottom-container"
           value={id4}
           onChange={(e) => setId4(e.target.value)}
         ></textarea>
       </div>
 
       <br />
-
-      <Button
-        variant="contained"
-        style={{ marginLeft: "286px", marginTop: "20px" }}
-        onClick={handleModalOpen}
-      >
-        Submit
-      </Button>
+<div>
+<Button
+  variant="contained"
+  style={{
+    position: "absolute",
+    left: "50%",
+    // top: "50%",
+    transform: "translate(-50%, -50%)",
+    marginTop:"10px"
+  }}
+  onClick={handleModalOpen}
+>
+  Submit
+</Button>
+</div>
 
       {/* Modal for the pop-up card */}
       <Modal
@@ -388,19 +377,11 @@ const TextAreaWithBackground = () => {
         aria-describedby="modal-modal-description"
       >
         <Card
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
+        className="card"
         >
           <CardContent>
             <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
+            className="card-container"
             >
               <TextField
                 label="First Name"
@@ -464,7 +445,7 @@ const TextAreaWithBackground = () => {
       {/* Snackbar for notification */}
       <Snackbar
         open={openSnackbar}
-        autoHideDuration={2000} 
+        autoHideDuration={2000}
         onClose={handleCloseSnackbar}
         message="You are Super Savy and we are happy to be connected with you. 😊"
       />
