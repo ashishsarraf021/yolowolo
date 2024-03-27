@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>YOLOWOLOp</h2>
+  <h2>YOLOWOLO</h2>
 </div>
 
 A feature-rich full-stack web application created using the MERN stack (Node.js, Express.js, MongoDB, and React).
